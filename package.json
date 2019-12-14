@@ -8,13 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "package": "ng build --prod && node build-package.js",
-    "package-dev": "ng build --prod --optimization=false --sourceMap=true --plugin webpack-plugin/rename-chunk --output-hashing bundles --statsJson=true && node build-package.js"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@angular-builders/custom-webpack": "7.2.0",
     "@angular/animations": "7.2.0",
     "@angular/common": "7.2.0",
     "@angular/compiler": "7.2.0",
