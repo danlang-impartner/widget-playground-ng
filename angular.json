@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular3p-widget": {
+    "widget-playground-ng": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -15,11 +15,8 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "customWebpackConfig": {
-              "path": "./px-component.js"
-            },
             "outputPath": "dist/temp",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -65,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular3p-widget:build"
+            "browserTarget": "widget-playground-ng:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular3p-widget:build:production"
+              "browserTarget": "widget-playground-ng:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular3p-widget:build"
+            "browserTarget": "widget-playground-ng:build"
           }
         },
         "test": {
@@ -110,7 +107,7 @@
         }
       }
     },
-    "angular3p-widget-e2e": {
+    "widget-playground-ng-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -119,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular3p-widget:serve"
+            "devServerTarget": "widget-playground-ng:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular3p-widget:serve:production"
+              "devServerTarget": "widget-playground-ng:serve:production"
             }
           }
         },
@@ -139,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "angular3p-widget"
+  "defaultProject": "widget-playground-ng"
 }
